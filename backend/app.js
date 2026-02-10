@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json({limit: "16kb"}));
 app.use(express.urlencoded());
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: `${process.env.FRONTEND_URI}`,
     credentials: true
 }))
 app.use('/user',userRouter);
