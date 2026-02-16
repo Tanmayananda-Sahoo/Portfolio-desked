@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 import axiosInstance from '../../utils/axios.js';
 
 const MeetingPage = (props) => {
+    const [message, setMessage] = useState({
+        text: '',
+        color: ''
+    });
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -15,8 +19,14 @@ const MeetingPage = (props) => {
             phone
         }
         await axiosInstance.post('/user/register', formData)
-        .then((response) => console.log(response.data.message))
-        .catch((error) => console.log(error.response?.data.message));
+        .then((response) => setMessage({
+            text: response.data.message,
+            color: 'green'
+        }))
+        .catch((error) => setMessage({
+            text: error.response?.data.message,
+            color: 'red'
+        }));
         // console.log(response?.data.message);
     }
     return (
@@ -38,6 +48,7 @@ const MeetingPage = (props) => {
                         <h5 className='text-2xl'>[X]</h5>
                     </div>
                 </div>
+                <p className={`text-${message.color}-500 text-center`}>{message.text}</p>
                 <div className='py-8 w-full'>
                     <form className='w-full' name='meetForm'>
                         <p className=''>Name :</p>

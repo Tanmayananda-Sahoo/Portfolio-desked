@@ -115,7 +115,7 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <Navbar />
+          
         </div>
   )
 }
