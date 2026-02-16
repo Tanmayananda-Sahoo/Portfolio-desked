@@ -16,7 +16,7 @@ const HomePage = () => {
 
   const openWindow = (name) => {
     setWindows((prev) => ({...prev, [name]: true}));
-    console.log(windows);
+    // console.log(windows);
   }
 
   const closeWindow = (name) => {
