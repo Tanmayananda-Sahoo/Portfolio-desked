@@ -23,7 +23,7 @@ const AboutPage = (props) => {
         </div>
         <div className='h-full'>
           <div className='py-10 flex items-center gap-20 px-10'>
-            <img src='../../public/Me.jpg' className='rounded-full h-40 w-40 bg-cover bg-center' />
+            <img src='https://res.cloudinary.com/dl7crwyee/image/upload/v1749444544/rjg7njcbkylzcjnjar2b.jpg' className='rounded-full h-40 w-40 bg-cover bg-center' />
             <div>
               <h1 className='text-5xl'>Tanmay</h1>
               <p className=''>Enthusiastic Tech Guy!!</p>
